@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>JIMIMI — Coming Soon</title>
+<meta name="description" content="Something new is on the way." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="data:," />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500&display=swap" />
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #060608;
+    --purple: #7c6af0;
+    --light: #f0eff8;
+    --dim: rgba(240,239,248,0.55);
+    --display: 'Syne', system-ui, sans-serif;
+    --sans: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  html, body { height: 100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--light);
+    font-family: var(--sans);
+    font-weight: 300;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes auraPulse {
+    0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1);    }
+    50%      { opacity: 1.0; transform: translate(-50%, -50%) scale(1.06); }
+  }
+
+  .stage {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-top {
+    position: fixed;
+    top: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: monospace;
+    color: rgba(255,255,255,0.2);
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    animation: fadeIn 1.5s 0.5s both;
+    z-index: 2;
+  }
+
+  .brand-bottom {
+    position: fixed;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: monospace;
+    color: rgba(124,106,240,0.45);
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    animation: fadeIn 2s 1.2s both;
+    z-index: 2;
+  }
+
+  .stack {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .figure-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 520px;
+    height: 360px;
+  }
+
+  .figure-aura {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 620px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(124,106,240,0.42) 0%,
+      rgba(124,106,240,0.16) 38%,
+      transparent 72%
+    );
+    filter: blur(10px);
+    animation: auraPulse 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .figure {
+    position: relative;
+    width: 200px;
+    height: 100%;
+    object-fit: contain;
+    filter:
+      invert(1)
+      brightness(0.95)
+      saturate(0.8)
+      drop-shadow(0 0 18px rgba(124,106,240,0.55))
+      drop-shadow(0 0 36px rgba(124,106,240,0.35))
+      blur(6px);
+    opacity: 0.85;
+    animation: fadeIn 2s 0.4s both;
+  }
+
+  .figure.flip { transform: scaleX(-1); }
+
+  .copy {
+    text-align: center;
+    animation: fadeIn 2s 0.8s both;
+  }
+
+  .headline {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--light);
+  }
+
+  .tagline {
+    margin-top: 14px;
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--dim);
+  }
+
+  @media (max-width: 600px) {
+    .figure-wrap { width: 320px; height: 280px; gap: 24px; }
+    .figure      { width: 140px; }
+    .figure-aura { width: 380px; height: 300px; }
+    .headline    { font-size: 22px; letter-spacing: 6px; }
+    .tagline     { font-size: 13px; }
+    .stack       { gap: 44px; }
+  }
+</style>
+</head>
+<body>
+  <div class="brand-top">JIMIMI</div>
+
+  <main class="stage">
+    <div class="stack">
+      <div class="figure-wrap" aria-hidden="true">
+        <div class="figure-aura"></div>
+        <img class="figure flip" src="male_side.svg" alt="" />
+        <img class="figure" src="female_side.svg" alt="" />
+      </div>
+
+      <div class="copy">
+        <h1 class="headline">Coming Soon</h1>
+        <p class="tagline">Something new is on the way.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="brand-bottom">jimimi.fit</div>
+</body>
+</html>

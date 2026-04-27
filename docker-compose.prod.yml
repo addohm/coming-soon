@@ -1,0 +1,17 @@
+name: jimimi
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jimimi-frontend
+    expose:
+      - "80"
+    networks:
+      - npm-network
+    restart: unless-stopped
+
+networks:
+  npm-network:
+    external: true

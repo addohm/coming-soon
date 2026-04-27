@@ -1,0 +1,11 @@
+name: jimimi-dev
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jimimi-frontend-dev
+    ports:
+      - "8088:80"
+    restart: unless-stopped

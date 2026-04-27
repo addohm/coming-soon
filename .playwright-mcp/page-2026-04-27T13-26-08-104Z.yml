@@ -1,0 +1,7 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]: JIMIMI
+  - main [ref=e3]:
+    - generic [ref=e7]:
+      - heading "Coming Soon" [level=1] [ref=e8]
+      - paragraph [ref=e9]: Something new is on the way.
+  - generic [ref=e10]: jimimi.fit
