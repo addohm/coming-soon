@@ -1,11 +1,11 @@
-name: jimimi
+name: coming-soon
 
 services:
   frontend:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: jimimi-frontend
+    container_name: coming-soon-frontend
     expose:
       - "80"
     networks:

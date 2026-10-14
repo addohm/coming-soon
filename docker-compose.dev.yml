@@ -1,11 +1,11 @@
-name: jimimi-dev
+name: coming-soon
 
 services:
   frontend:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: jimimi-frontend-dev
+    container_name: coming-soon-frontend
     ports:
       - "8088:80"
     restart: unless-stopped
